@@ -1,15 +1,12 @@
 # Flor-de-vida1
-Perfecto 👍 Aquí tienes una explicación **línea por línea**, redactada para que puedas incluirla directamente en el `README.md` de tu repositorio en GitHub.
 
----
-
-# 📖 Explicación del Código – Generación de Flor en Blender
+#  Explicación del Código – Generación de Flor en Blender
 
 Este script fue desarrollado en Python utilizando la API de Blender (`bpy`) para generar una figura similar a una flor mediante la creación de círculos distribuidos simétricamente.
 
 ---
 
-## 🔹 1. Importación de módulos
+##  1. Importación de módulos
 
 ```python
 import bpy
@@ -24,7 +21,7 @@ import math
 
 ---
 
-## 🔹 2. Limpiar la escena
+##  2. Limpiar la escena
 
 ```python
 bpy.ops.object.select_all(action='SELECT')
@@ -36,11 +33,11 @@ bpy.ops.object.delete()
 
 * `delete()`
   Elimina todos los objetos seleccionados.
-  👉 Esto garantiza que el script comience con una escena vacía.
+   Esto garantiza que el script comience con una escena vacía.
 
 ---
 
-## 🔹 3. Parámetros de la figura
+##  3. Parámetros de la figura
 
 ```python
 radio = 3
@@ -60,7 +57,7 @@ paso_angular = 40  # 360 / 6
 
 ---
 
-## 🔹 4. Creación del círculo central
+##  4. Creación del círculo central
 
 ```python
 bpy.ops.mesh.primitive_circle_add(
@@ -83,7 +80,7 @@ Este será el **centro de la flor**.
 
 ---
 
-## 🔹 5. Creación de los círculos periféricos (estructura tipo flor)
+##  5. Creación de los círculos periféricos (estructura tipo flor)
 
 ```python
 while angulo_actual < 360:
@@ -93,7 +90,7 @@ Se crea un ciclo `while` que se ejecutará hasta completar 360 grados alrededor 
 
 ---
 
-### 🔸 Conversión de grados a radianes
+###  Conversión de grados a radianes
 
 ```python
 rad = math.radians(angulo_actual)
@@ -103,7 +100,7 @@ Las funciones trigonométricas (`sin` y `cos`) trabajan en radianes, por eso se 
 
 ---
 
-### 🔸 Conversión de coordenadas polares a cartesianas
+###  Conversión de coordenadas polares a cartesianas
 
 ```python
 x = radio * math.cos(rad)
@@ -117,11 +114,11 @@ Aquí se aplican fórmulas matemáticas:
 
 Esto permite calcular la posición exacta de cada círculo alrededor del centro.
 
-👉 Gracias a esto, los círculos se distribuyen de manera simétrica formando los pétalos.
+ Gracias a esto, los círculos se distribuyen de manera simétrica formando los pétalos.
 
 ---
 
-### 🔸 Creación del círculo en la nueva posición
+###  Creación del círculo en la nueva posición
 
 ```python
 bpy.ops.mesh.primitive_circle_add(
@@ -139,7 +136,7 @@ Se crea un nuevo círculo:
 
 ---
 
-### 🔸 Incremento del ángulo
+###  Incremento del ángulo
 
 ```python
 angulo_actual += paso_angular
@@ -149,7 +146,7 @@ Aumenta el ángulo en 40° para la siguiente iteración, permitiendo generar el 
 
 ---
 
-# 🎯 Resultado Final
+#  Resultado Final
 
 El script genera:
 
